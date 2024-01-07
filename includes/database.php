@@ -1,10 +1,10 @@
 <?php
 
 class database{
-  private $servername = "bq9jiie2yajk6qbdh5fw-mysql.services.clever-cloud.com";//"srv200531498.mysql.database.azure.com";
-  private $username   = "ubtoj2dpnrwa3pjp";//"admin200531498";
-  private $password   = "xOKjIgCkdyGsEvCIpIo3";//"*Anwar@M#";
-  private $database   = "bq9jiie2yajk6qbdh5fw";
+  private $servername = "localhost";//"srv200531498.mysql.database.azure.com";
+  private $username   = "root";//"admin200531498";
+  private $password   = "";//"*Anwar@M#";
+  private $database   = "a2";
   public  $con;
 
   // Database Connection
