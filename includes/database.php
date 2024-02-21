@@ -1,10 +1,10 @@
 <?php
 
 class database{
-  private $servername = "localhost";//"srv200531498.mysql.database.azure.com";
-  private $username   = "root";//"admin200531498";
-  private $password   = "";//"*Anwar@M#";
-  private $database   = "a2";
+  private $servername = "bq9jiie2yajk6qbdh5fw-mysql.services.clever-cloud.com";//"srv200531498.mysql.database.azure.com";
+  private $username   = "ubtoj2dpnrwa3pjp";//"admin200531498";
+  private $password   = "xOKjIgCkdyGsEvCIpIo3";//"*Anwar@M#";
+  private $database   = "bq9jiie2yajk6qbdh5fw";
   public  $con;
 
   // Database Connection
@@ -121,10 +121,26 @@ public function updateUser($id,$usertype)
     }
   }
 
-  // Fetch garment records for show listing
+  // Fetch user records for show listing
   public function displayUserData()
   {
     $query = "SELECT * FROM login";
+    $result = $this->con->query($query);
+    if ($result->num_rows > 0) {
+      $data = array();
+      while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+      }
+      return $data;
+    }else{
+      echo "No found records";
+    }
+  }
+
+  // Fetch user record for specific user
+  public function displayCurrentUserData($email)
+  {
+    $query = "SELECT * FROM login where email='$email'";
     $result = $this->con->query($query);
     if ($result->num_rows > 0) {
       $data = array();
